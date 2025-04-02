@@ -7,9 +7,9 @@ contract HotelRoom {
 
     enum Statuses {Vacant, Occupied}
 
-    Statuses currentStatus;
+    Statuses public currentStatus;
 
-    event sendUpdate(address _sender,uint _amount);
+    event sendUpdate(address _sender,uint _amount, bytes _data);
 
 
     constructor() {        
@@ -30,8 +30,11 @@ contract HotelRoom {
 
     function book() payable public onlyWhenVacant costs(2 ether) {        
         currentStatus = Statuses.Occupied;
-        owner.transfer(msg.value);
-        emit sendUpdate(msg.sender,msg.value);
+        // owner.transfer(msg.value);
+        (bool sent, bytes memory data) = owner.call{value: msg.value}("");
+        require(sent);
+
+        emit sendUpdate(msg.sender,msg.value, data);
       } 
     
    

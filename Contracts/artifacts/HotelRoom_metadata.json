@@ -24,6 +24,12 @@
 						"internalType": "uint256",
 						"name": "_amount",
 						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "bytes",
+						"name": "_data",
+						"type": "bytes"
 					}
 				],
 				"name": "sendUpdate",
@@ -34,6 +40,19 @@
 				"name": "book",
 				"outputs": [],
 				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "currentStatus",
+				"outputs": [
+					{
+						"internalType": "enum HotelRoom.Statuses",
+						"name": "",
+						"type": "uint8"
+					}
+				],
+				"stateMutability": "view",
 				"type": "function"
 			},
 			{
@@ -78,11 +97,11 @@
 	},
 	"sources": {
 		"Contracts/HotelRoom.sol": {
-			"keccak256": "0xe351a9c127666ebe79ff2f77cad345a6a8da80211925c9aa564e9ba760a9c815",
+			"keccak256": "0x516979b07f09c21722b06f5cfa62db7616e4ab1812e5a72336d04590866509a3",
 			"license": "MIT",
 			"urls": [
-				"bzz-raw://31e0cf9ddd2dbfc1f22d839bd5fc08fa969e75bdc3dc3ff984f43002bc237e15",
-				"dweb:/ipfs/QmbcHbUYSBkoroKpJSDKD7UMex1vmEfBqiy2uc54wecWyT"
+				"bzz-raw://5c73edfa0360a61b82e6b55d3e9c2ed2e9fcd9a7ded2516b9711922ad76127e5",
+				"dweb:/ipfs/QmVe6EZkFQ39v1BKPXQwSoSK46f1H53jA8kJYrqKZGzMR5"
 			]
 		}
 	},
